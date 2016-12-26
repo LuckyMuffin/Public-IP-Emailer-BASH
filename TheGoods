@@ -25,6 +25,6 @@ vi /etc/ssmtp/revaliases
 root:tipsmobilebranch@gmail.com:smtp.gmail.com:587
 
 #Finally run this command to send a test message REPLACE THE EXAMPLE TEXT AND PATHS TO THE FILES WITH YOUR OWN OBVIOUSLY
-echo -e "to: EXAMPLE.COM\nsubject: EXAMPLE\n"| (cat - && uuencode /MailBotDump.w MailBotDump.text) | ssmtp EXAMPLE@gmail.com
+echo -e "to: EXAMPLE.COM\nsubject: EXAMPLE\n"| (cat - && uuencode /MailDump.w MailDump.text) | ssmtp EXAMPLE@gmail.com
 
 #Now just add the bash scripts you created above to a cron job with your own unique time you want to email to be sent, I have mine going off at 6 AM every morning.
