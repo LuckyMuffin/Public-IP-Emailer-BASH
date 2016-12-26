@@ -24,6 +24,17 @@ vi /etc/ssmtp/revaliases
 #Add the following at the bottom of the file
 root:tipsmobilebranch@gmail.com:smtp.gmail.com:587
 
+#Add your own credentials to /etc/ssmtp/ssmtp.conf, it should look something like this;
+root=MyEmailAddress@gmail.com
+mailhub=smtp.gmail.com:587
+AuthUser=MyEmailAddress@gmail.com
+AuthPass=MyPassword
+UseTLS=YES
+UseSTARTTLS=YES
+rewriteDomain=gmail.com
+hostname=MyEmailAddress@gmail.com
+FromLineOverride=YES
+
 #Finally run this command to send a test message REPLACE THE EXAMPLE TEXT AND PATHS TO THE FILES WITH YOUR OWN OBVIOUSLY
 echo -e "to: EXAMPLE.COM\nsubject: EXAMPLE\n"| (cat - && uuencode /MailDump.w MailDump.text) | ssmtp EXAMPLE@gmail.com
 
